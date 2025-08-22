@@ -26,5 +26,4 @@ public class Cliente {
     private int edad;
 
 
-
 }

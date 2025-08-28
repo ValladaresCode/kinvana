@@ -10,10 +10,11 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+
 import java.util.List;
 import java.util.Scanner;
 
-@SpringBootApplication
+//@SpringBootApplication
 public class KinvanaApplication implements CommandLineRunner {
 
 	//Inyeccion de dependencia
@@ -68,6 +69,7 @@ public class KinvanaApplication implements CommandLineRunner {
 				List<Cliente> clientes = clienteService.listarClientes();
 				clientes.forEach(cliente -> logger.info(cliente.toString()+sl));
 			}
+
 			case 2 ->{
 				logger.info(sl+"Buscar Sliente por ID"+sl);
 				var codigo = Integer.parseInt(consola.nextLine());
@@ -79,6 +81,7 @@ public class KinvanaApplication implements CommandLineRunner {
 					logger.info("Cliente no encontrado"+sl+cliente+sl);
 				}
 			}
+
 			case 3 ->{
 				logger.info("Agregar nuevo Cliente");
 				logger.info("Ingrese el nombre:");
@@ -108,6 +111,7 @@ public class KinvanaApplication implements CommandLineRunner {
 				clienteService.guardarCliente(cliente);
 				logger.info("Cliente Registrado");
 			}
+
 			case 4 ->{
 				logger.info(sl+"modificar Cliente"+sl);
 				logger.info(sl+"Ingrese el ID del cliente a actualizar"+sl);
@@ -143,6 +147,7 @@ public class KinvanaApplication implements CommandLineRunner {
 					logger.info("Cliente Invalido"+sl+cliente+sl);
 				}
 			}
+
 			case 5 ->{
 				logger.info(sl+"Eliminar Cliente"+sl);
 				logger.info("Ingreser ID del cliente a eliminar");
@@ -155,10 +160,12 @@ public class KinvanaApplication implements CommandLineRunner {
 					logger.info("Cliente NO encontrado"+cliente);
 				}
 			}
+
 			case 6 ->{
 				logger.info("Hasta pronto"+sl+sl);
 				salir = true;
 			}
+
 			default -> logger.info("Opcion no valida");
 		}
 		return salir;

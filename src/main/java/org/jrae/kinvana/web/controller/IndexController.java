@@ -83,7 +83,7 @@ public class IndexController {
         FacesContext.getCurrentInstance().addMessage(null, new FacesMessage("cliente eliminado") );
         //Metodo ajax para actualizar la tabla
         PrimeFaces.current().ajax().update("formulario-clientes:mensaje_emergente",
-                "formulario-cliente:tabla-clientes");
+                "formulario-clientes:tabla-clientes");
     }
 
 }

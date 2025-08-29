@@ -70,7 +70,7 @@
 
                         <p:column headerText="OPCION">
                             <p:commandButton value="Editar" icon="pi pi-pencil" class="ui-button-primary"
-                                                update="formulario-modal:ventana-cliente"
+                                                update=":formulario-modal:ventana-cliente"
                                                 process="@this" style="margin-right: 5rem" oncomplete="PF('ventanaModalCliente').show()">
                                 <f:setPropertyActionListener value="#{cliente}" target="#{indexController.clienteSeleccionado}"/>
                                 <p:resetInput target=":formulario-modal:ventana-cliente"/>
